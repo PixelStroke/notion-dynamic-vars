@@ -1,0 +1,40 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@types/node": "npm:@types/node@18.16.19"
+    },
+    "npm": {
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
+      }
+    }
+  },
+  "redirects": {
+    "https://deno.land/std/dotenv/mod.ts": "https://deno.land/std@0.224.0/dotenv/mod.ts",
+    "https://deno.land/std/fmt/colors.ts": "https://deno.land/std@0.224.0/fmt/colors.ts",
+    "https://deno.land/x/dotenv/mod.ts": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "https://deno.land/x/jsonfile/mod.ts": "https://deno.land/x/jsonfile@1.0.0/mod.ts",
+    "https://deno.land/x/notion_sdk/src/mod.ts": "https://deno.land/x/notion_sdk@v2.2.3/src/mod.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.224.0/dotenv/mod.ts": "0180eaeedaaf88647318811cdaa418cc64dc51fb08354f91f5f480d0a1309f7d",
+    "https://deno.land/std@0.224.0/dotenv/parse.ts": "09977ff88dfd1f24f9973a338f0f91bbdb9307eb5ff6085446e7c423e4c7ba0c",
+    "https://deno.land/std@0.224.0/dotenv/stringify.ts": "275da322c409170160440836342eaa7cf012a1d11a7e700d8ca4e7f2f8aa4615",
+    "https://deno.land/std@0.224.0/fmt/colors.ts": "508563c0659dd7198ba4bbf87e97f654af3c34eb56ba790260f252ad8012e1c5",
+    "https://deno.land/x/dotenv@v3.2.2/mod.ts": "077b48773de9205266a0b44c3c3a3c3083449ed64bb0b6cc461b95720678d38e",
+    "https://deno.land/x/dotenv@v3.2.2/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670",
+    "https://deno.land/x/jsonfile@1.0.0/mod.ts": "e9c1125d58078de9dc4b3ef43bcc644375af26bef565b7f623df706e97d76087",
+    "https://deno.land/x/jsonfile@1.0.0/read_json.ts": "bbf7fa8f559e8540a8bbb837078a4f2b6b3e5d94dfc7c9aaf752ab9e1a00f029",
+    "https://deno.land/x/jsonfile@1.0.0/write_json.ts": "89a6231f51a6759dfff8f1f5534d030c2239c22fc9f3c0b3305d424f4f1d5604",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/Client.ts": "00938a998e9aa825688979e6b51669f12387ff9800477dda255ca325a7868de8",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/api-endpoints.ts": "2390b0e86be564a00e1b97f2cf2877f5ffbe09221208cf93f865ce45ef71b27b",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/errors.ts": "43a4845c2e6576ccee7c6056172a194a6baefc3957d1ac92af6420297883197a",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/helpers.ts": "f5623eb0999cdbaede187af6737eac4cd557d089ee09399bd920d3d55b296743",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/logging.ts": "78ff1ed03a20a356b9c9f2cb080aaafec80702c9c292d3a6d229f34e39be6869",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/mod.ts": "fd42505b28c4dcc791369f2a070a4871799aa86bbfdb39f60745dd7746a4e684",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/type-utils.ts": "f533961a11ca45b4362de4688087104da18c37f5fc081c2d388112891287f033",
+    "https://deno.land/x/notion_sdk@v2.2.3/src/utils.ts": "e47eefcad19c6b4ce4c5ee7f34e9201edf4ba7af5f9e3fababc3253e0bb637cd"
+  }
+}
