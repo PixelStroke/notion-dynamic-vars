@@ -1,11 +1,22 @@
 {
-    "tasks": {
-      "run": "deno run --allow-net --allow-read --allow-env ./src/mod.ts",
-      "cache": "deno cache --import-map=import_map.json ./src/mod.ts --reload"
-    },
-  "importMap": "./import_map.json",
-    "compilerOptions": {
-      "lib": ["deno.ns", "dom"]
-    }
+  "tasks": {
+    "run": "deno run --allow-net --allow-env --allow-read --allow-write src/mod.ts",
+    "poll": "deno run --alow-net --allow-env --allow-read --allow-write src/mod.ts --poll --verbose",
+    "cache": "deno cache --import-map=import_map.json ./src/mod.ts --reload"
+  },
+  // "importMap": "./import_map.json",
+  "compilerOptions": {
+    "lib": ["deno.ns"]
+  },
+  "imports": {
+    "@fmp/axios-http-methods": "jsr:@fmp/axios-http-methods@^0.2.0",
+    "@std/cli": "jsr:@std/cli@^1.0.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
+    "@std/log": "jsr:@std/log@^0.224.5",
+    "@deno_cron/cron": "https://deno.land/x/deno_cron@v1.0.0/cron.ts",
+    "@jsonfile": "https://deno.land/x/jsonfile@1.0.0/mod.ts",
+    "@notion_sdk": "https://deno.land/x/notion_sdk@v2.2.3/src/mod.ts",
+    "@notion_sdk/api-endpoints": "https://deno.land/x/notion_sdk@v2.2.3/src/api-endpoints.ts",
+    "fmt/colors": "https://deno.land/std@0.224.0/fmt/colors.ts"
   }
-  
+}

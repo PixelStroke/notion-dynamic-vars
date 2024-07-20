@@ -1,5 +1,5 @@
-import { readJson } from "denoland/jsonfile";
-import { load as loadEnv } from "std/dotenv";
+import { readJson } from "@jsonfile";
+import { load as loadEnv } from "@std/dotenv";
 import { Logger } from "./logger.ts";
 
 interface Settings {
@@ -45,7 +45,7 @@ export async function loadSettings({ settingsType, settingsPath = DEFAULT_SETTIN
     try {
       await loadSettingsFile(settingsPath);
     } catch (jsonError) {
-      Logger.error("Neither .env nor settings.json file could be loaded.", jsonError);
+      Logger.error("Neither .env nor settings.json file could be loaded.");
       throw jsonError;
     }
   }
@@ -57,7 +57,7 @@ async function loadSettingsFile(fileName: string = DEFAULT_SETTINGS_PATH): Promi
     for (const [key, value] of Object.entries(config.Values)) {
       Deno.env.set(key, String(value));
     }
-    Logger.info("settings.json file loaded successfully.", { color: "green" });
+    Logger.info("settings.json file loaded successfully.");
   } catch (jsonError) {
     Logger.error("settings.json file could not be loaded.", jsonError);
     throw jsonError;

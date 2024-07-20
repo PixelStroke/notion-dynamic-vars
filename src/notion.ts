@@ -1,7 +1,9 @@
-import { Client } from "denoland/notion_sdk";
-import { BlockObjectResponse, ParagraphBlockObjectResponse, RichTextItemRequest } from "denoland/notion_sdk/api-endpoints";
+import { Client } from "@notion_sdk";
+import { BlockObjectResponse, ParagraphBlockObjectResponse, QueryDatabaseResponse, RichTextItemRequest } from "@notion_sdk/api-endpoints";
 import type { NotionPage, NotionSearchResponse } from "./interfaces.ts";
+import { Logger } from "./logger.ts";
 
+Logger.info("Notion API Key: " + Deno.env.get("NOTION_API_KEY"));
 const notion = new Client({ auth: Deno.env.get("NOTION_API_KEY") });
 
 async function fetchAllPages(): Promise<NotionPage[]> {
@@ -111,4 +113,58 @@ async function updateWorkspaceContent() {
   }
 }
 
-export { updateWorkspaceContent };
+let lastChecked = new Date(0).toISOString();
+
+export async function createNotionDatabase() {
+  const response = await notion.databases.create({
+    parent: { page_id: "workspace" },
+    title: [{ text: { content: "Workspace Content" } }],
+    properties: {
+      Name: {
+        title: {},
+      },
+      Description: {
+        rich_text: {},
+      },
+      LastEdited: {
+        last_edited_time: {},
+      },
+    },
+  });
+
+  Logger.log(`Database created: ${response.id}`);
+}
+
+async function fetchNotionUpdates() {
+  let response: QueryDatabaseResponse | null = null;
+  try {
+    response = await notion.databases.query({
+      database_id: Deno.env.get("NOTION_DATABASE_ID") ?? "",
+      filter: {
+        property: "last_edited_time",
+        date: {
+          after: lastChecked,
+        },
+      },
+    });
+  } catch(dbQueryError) {
+    Logger.error("Failed to fetch updates");
+    throw dbQueryError;
+  }
+
+  if (!response) {
+    Logger.error("No response from Notion API.");
+    return;
+  }
+
+  const updatedPages = response?.results ?? [] as NotionPage[];
+
+  if (updatedPages.length > 0) {
+    Logger.log(`Updated Pages: ${updatedPages}`);
+    lastChecked = new Date().toISOString();
+  } else {
+    Logger.log("No updates found.");
+  }
+}
+
+export { updateWorkspaceContent, fetchNotionUpdates };

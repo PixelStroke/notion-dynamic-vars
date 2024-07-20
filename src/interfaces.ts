@@ -1,4 +1,4 @@
-import { RichTextItemRequest, ApiColor } from "denoland/notion_sdk/api-endpoints";
+import { RichTextItemRequest, ApiColor } from "@notion_sdk/api-endpoints";
 
 export interface NotionPage {
   object: string;
@@ -9,6 +9,10 @@ export interface NotionSearchResponse {
   results: NotionPage[];
   has_more: boolean;
   next_cursor: string | null;
+  filter?: {
+    value: string;
+    property: string;
+  };
 }
 
 export interface NotionBlock {

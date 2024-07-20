@@ -1,9 +1,13 @@
 {
-	"imports": {
-		"std/dotenv": "https://deno.land/std@0.224.0/dotenv/mod.ts",
-        "fmt/colors": "https://deno.land/std@0.224.0/fmt/colors.ts",
-        "denoland/jsonfile": "https://deno.land/x/jsonfile@1.0.0/mod.ts",
-        "denoland/notion_sdk": "https://deno.land/x/notion_sdk@v2.2.3/src/mod.ts",
-        "denoland/notion_sdk/api-endpoints": "https://deno.land/x/notion_sdk@v2.2.3/src/api-endpoints.ts"
-	}
+  "imports": {
+    "@fmp/axios-http-methods": "jsr:@fmp/axios-http-methods@^0.2.0",
+    "@std/cli": "jsr:@std/cli@^1.0.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
+    "@std/log": "jsr:@std/log@^0.224.5",
+    "denoland/cron": "https://deno.land/x/deno_cron@v1.0.0/cron.ts",
+    "denoland/jsonfile": "https://deno.land/x/jsonfile@1.0.0/mod.ts",
+    "denoland/notion_sdk": "https://deno.land/x/notion_sdk@v2.2.3/src/mod.ts",
+    "denoland/notion_sdk/api-endpoints": "https://deno.land/x/notion_sdk@v2.2.3/src/api-endpoints.ts",
+    "fmt/colors": "https://deno.land/std@0.224.0/fmt/colors.ts"
+  }
 }
